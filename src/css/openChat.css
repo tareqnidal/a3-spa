@@ -1,0 +1,128 @@
+/* Chat Container Styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 300px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Chat Messages Area */
+.chat-messages {
+  flex-grow: 1;
+  height: 300px; /* Fixed height */
+  padding: 10px;
+  overflow-y: auto; /* Enables vertical scrolling */
+  background-color: #fff;
+  border-top: 1px solid #ddd; /* Optional, adds a border at the top for better separation */
+}
+
+.chat-messages p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+/* Chat Input Container */
+.chat-input-container {
+  display: flex; /* Add this to align children side by side */
+  align-items: center; /* Align children vertically */
+  padding: 10px;
+}
+
+/* Chat Input */
+.chat-input {
+  flex-grow: 1; /* Make chat input grow to fill space */
+  padding: 5px;
+  border: none;
+  resize: none; /* Keep textarea from being resized */
+  margin-right: 5px; /* Ensure some space between input and emoji picker */
+}
+
+/* Emoji Picker */
+.emoji-picker {
+  flex-shrink: 0; /* Prevent emoji picker from shrinking */
+  padding: 10px;
+  margin-left: 5px; /* Optional, adds space between input and picker */
+}
+
+/* Scrollbar Styles for Messages */
+.chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Window Styles */
+.window {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title-bar {
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close-icon {
+  float: right;
+  cursor: pointer;
+}
+
+/* Username Container Styles */
+.username-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust as needed */
+  width: 300px; /* Adjust as needed */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Username Input Field */
+#username-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 50%;
+  margin-left: 10%;
+}
+
+/* Username Submit Button */
+#username-submit {
+  width: 85%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #209e35;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10%;
+}
+
+#username-submit:hover {
+  background-color: #218838;
+}

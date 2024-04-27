@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*..............................................................*/
+
+
+/* style for Buttons to open the  applications */
+
+.app-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  border: none;
+  border-radius: 50%;
+  /* Changed to 50% for a round shape */
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+  width: 60px;
+  /* New - Set a fixed width */
+  height: 60px;
+  /* New - Set a fixed height */
+}
+
+/* Memory Game Button */
+.btn-memory-game {
+  background-image: url('../recourses/memoryGame.png');
+  background-size: cover;
+  /* Ensures the image covers the entire button */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+}
+
+/* Chat Button */
+.btn-chat {
+  background-image: url('../recourses/openChat.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+/* Currency Converter Button */
+.btn-currency-converter {
+  background-image: url('../recourses/currencyConverter.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/*............................................................*/
+
+/* Styling for the close icon */
+
+.close-icon {
+  cursor: pointer;
+  margin-left: 15px;
+  color: #f1eeee;
+}
+
+/* Hover effect for the close icon */
+.close-icon:hover {
+  background-color: red;
+  border-radius: 50%;
+}
+
+/*................................................*/
+
+/* Desktop style */
+#desktop {
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.container-desktop {
+  width: 100%;
+  height: 100%;
+  background-image: url('../recourses/background.gif');
+  /* Update with the correct path */
+  background-size: cover;
+  /* This will cover the entire area of the container */
+  background-repeat: no-repeat;
+  /* The image will not repeat */
+  background-position: center;
+  /* The image will be centered */
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+
+
+
+
+/*.....................................................*/
+
+/* Basic styling for windows */
+.window {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  z-index: 1;
+  max-width: 600px;
+  /* Adjust as necessary */
+  max-height: 80%;
+  /* Adjust as necessary */
+  overflow: auto;
+  /* Allows scrolling */
+}
+
+/* Styling for the title bar */
+.title-bar {
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  color: #fff;
+  cursor: move;
+  font-size: 1.1rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Styling for the window content area */
+.window-content {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Clearing float for close icon */
+.title-bar::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.window * {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+/* Headings */
+.window h1,
+.window h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, black, white);
+  background-repeat: no-repeat;
+
+  /* Windows-like blue color */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  /* Optional: adds a slight shadow for depth */
+  z-index: 1000;
+  /* Ensures it stays above other elements */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}

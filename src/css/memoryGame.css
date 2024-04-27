@@ -1,0 +1,208 @@
+.game-container {
+  display: none;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#moveCounter,
+#timer {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+button#restartButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button#restartButton:hover {
+  background-color: #45a049;
+}
+
+/* Styles for the Game Board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.memory-tile {
+  width: 100%;
+  padding-top: 100%;
+  /* 1:1 Aspect Ratio */
+  position: relative;
+  cursor: pointer;
+  background-color: #dddddd;
+  border-radius: 10px;
+  perspective: 1000px;
+  /* For 3D Flip Effect */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s;
+  background-size: cover;
+  /* Ensure the image covers the whole area */
+  background-position: center;
+  /* Center the image within the element */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
+}
+
+.card-front {
+  background-color: #f0f0f0;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.memory-tile.flipped .card-front {
+  transform: rotateY(-180deg);
+}
+.memory-tile.card0 .card-back {
+  background-image: url('../gameTileImg/0.png');
+}
+
+.memory-tile.card1 .card-back {
+  background-image: url('../gameTileImg/1.png');
+}
+.memory-tile.card2 .card-back {
+  background-image: url('../gameTileImg/2.png');
+}
+
+.memory-tile.card3 .card-back {
+  background-image: url('../gameTileImg/3.png');
+}
+.memory-tile.card4 .card-back {
+  background-image: url('../gameTileImg/4.png');
+}
+
+.memory-tile.card5 .card-back {
+  background-image: url('../gameTileImg/5.png');
+}
+.memory-tile.card6 .card-back {
+  background-image: url('../gameTileImg/6.png');
+}
+
+.memory-tile.card7 .card-back {
+  background-image: url('../gameTileImg/7.png');
+}
+
+.memory-tile.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+.memory-tile.match {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.memory-tile.match .card-back {
+  background-color: #4CAF50;
+  /* Green background for matched cards */
+  color: white;
+  /* Adjust text color if needed */
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
+button:focus {
+  outline: none;
+}
+
+.size-selection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.size-selection button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+/* Existing styles for 4x4 grid */
+.game-board.four-by-four .memory-tile {
+  padding-top: 100%;
+  /* Keep the current 1:1 aspect ratio for 4x4 grid */
+}
+
+/* New styles for 4x2 grid */
+.game-board.four-by-two .memory-tile {
+  padding-top: 50%;
+  /* Adjust the aspect ratio for 4x2 grid */
+}
+
+/* New styles for 2x2 grid */
+.game-board.two-by-two .memory-tile {
+  padding-top: 70%;
+  /* Adjust the aspect ratio for 2x2 grid */
+}
+
+.grid-size-buttons {
+  display: block; /* Show this by default */
+}
+
+
+/* Hover effects for grid size buttons */
+.grid-size-buttons button:hover {
+  background-color: #367c39;
+  color: #fff;
+}
+
+/* Styling for victory message */
+.victory-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #4c6faf;
+  display: none;
+  /* Initially hidden */
+}
+
+/* For a subtle hover effect on memory tiles */
+.memory-tile:not(.match):hover {
+  transform: scale(1.05);
+}
